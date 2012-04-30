@@ -102,6 +102,8 @@ BASE_VIEW_HTML_SKELETON='''\
 '''
 ENTITY_MODEL_SKELETON='''\
 class %s(SQLObject):
+    class sqlmeta:
+        lazyUpdate = True
     pass
 '''
 ENTITY_CONTROLLER_SKELETON='''\
@@ -247,7 +249,7 @@ def AddEntity(BASE_PATH,name):
                         'import controllers.%s\n'%(name), 
                         '#END_IMPORT_CONTROLLER')
     AppendContentBefore(BASE_PATH+'/'+SERVER_PY_PATH,
-                        '''+[(B+r'%s/',controllers.%s.IndexHandler),(B+r'%s/([0-9]+)',controllers.%s.IdHandler)]\n'''%(name,name,name,name),
+                        '''+[(B+r'%s/',controllers.%s.IndexHandler),(B+r'%s/([0-9]+)',controllers.%s.IdHandler)]\\\n'''%(name,name,name,name),
                         '#END_TORNADO_URLMAP_GEN'
                         )
     

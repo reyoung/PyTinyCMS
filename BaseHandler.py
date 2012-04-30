@@ -9,9 +9,6 @@ class BaseHandler(tornado.web.RequestHandler):
         self.set_status(200)
         
     def getUser(self):
-        # Stub.
-        return 'admin@admin.com'
-        
         return self.get_secure_cookie('user')
     def get_current_user(self):
         return self.getUser()

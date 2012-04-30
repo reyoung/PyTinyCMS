@@ -1,0 +1,11 @@
+<html>
+<head>
+	{% import settings %}
+    <title>{% block title %}Default title{% end %}</title>
+    <script type="text/javascript" src="{{settings.SITE_PATH}}static/scripts/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="{{settings.SITE_PATH}}static/scripts/ejs_production.js"></script>
+    <script type="text/javascript" src="{{settings.SITE_PATH}}static/scripts/view.js"></script>
+    {% block moreHeader %}{% end %}
+</head>
+    {% block main %}Main{% end %}
+</html>

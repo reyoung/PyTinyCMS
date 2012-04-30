@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/test.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>无标题文档</title>
+<!-- InstanceEndEditable -->
+<script type="text/javascript" src="../../scripts/jquery-1.7.min.js" ></script>
+<script type="text/javascript" src="../../scripts/conf.js"> </script>
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="OnClick" -->
+<script type="text/javascript">
+function onClick(){
+	DELETE('/Users/1',null,function (data){
+		console.log('Success DEL User')
+	})
+}
+</script>
+<input type="button" onclick="onClick()" value="test" />
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

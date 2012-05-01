@@ -2,9 +2,9 @@
 <head>
 	{% import settings %}
     <title>{% block title %}Default title{% end %}</title>
-    <script type="text/javascript" src="{{settings.SITE_PATH}}static/scripts/jquery-1.7.min.js"></script>
-    <script type="text/javascript" src="{{settings.SITE_PATH}}static/scripts/ejs_production.js"></script>
-    <script type="text/javascript" src="{{settings.SITE_PATH}}static/scripts/view.js"></script>
+    <script type="text/javascript" src="{{settings.SITE_PATH}}static/scripts/yui/build/yui/yui-min.js"></script>
+    <script type="text/javascript" src="{{settings.SITE_PATH}}static/js/yuiapp.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{settings.SITE_PATH}}static/css/red.css" />
     {% block moreHeader %}{% end %}
 </head>
     {% block main %}Main{% end %}

@@ -18,6 +18,6 @@ class IndexHandler(BaseHandler):
         ulist = list(U.select(U.q.EMail == email and U.q.Password == md5.new(password).hexdigest(), limit=1))
         if len(ulist)!=0:
             self.set_secure_cookie('user',email)
-            self.redirect(settings.SITE_PATH)
+            self.set_status(200)
         else:
-            self.redirect(settings.SITE_PATH+'Users/login.html?err_msg=1')
+            self.set_status(403)

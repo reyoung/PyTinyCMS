@@ -1,2 +1,5 @@
 
 *.pyc
+/static/scripts/yui*
+/static/scripts/Build*
+*.db

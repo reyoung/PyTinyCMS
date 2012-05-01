@@ -23,7 +23,7 @@ import controllers.Users
 UrlMap=[]\
 +[(B+r'@test/(.*)',tornado.web.StaticFileHandler,dict(path=os.path.join(os.path.dirname(__file__),'test')))]\
 +[(B+r'',controllers.HelloWorld.IndexHandler)]\
-+[(B+r'Users/',controllers.Users.IndexHandler),(B+r'Users/([0-9]+)',controllers.Users.IdHandler)]\
++[(B+r'Users/',controllers.Users.IndexHandler),(B+r'Users/([0-9]+)/',controllers.Users.IdHandler)]\
 +[(B+r'Users/login.html',controllers.Login.IndexHandler)]\
 #END_TORNADO_URLMAP_GEN
 

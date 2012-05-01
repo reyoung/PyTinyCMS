@@ -5,8 +5,7 @@
 <!-- TemplateBeginEditable name="doctitle" -->
 <title>无标题文档</title>
 <!-- TemplateEndEditable -->
-<script type="text/javascript" src="../scripts/jquery-1.7.min.js" ></script>
-<script type="text/javascript" src="../scripts/conf.js"> </script>
+<script type="text/javascript" src="/static/scripts/yui/build/yui/yui-min.js" ></script>
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
 </head>

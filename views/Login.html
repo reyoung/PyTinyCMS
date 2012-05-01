@@ -1,10 +1,55 @@
 {% extends "Base.html" %}
-{% block main %}
-<div id="display">
-	<form method="post">
-    	EMail: <input type="text" name="email" id="email"  /> <br  />
-        Password: <input type="password" name="password" id="password"  /> <br />
-        <input type="submit" value="Login" />
-    </form>
-</div>
+{% block main %} 
+<div id="login_form"></div>
+<script type="text/javascript">
+	YUI({
+		gallery : 'gallery-2011.11.10-16-24'
+	}).use('gallery-form', function(Y) {
+
+		var EMailField = new Y.TextField({
+			name : 'email',
+			required : true,
+			label : 'E-Mail:',
+			validator : 'email',
+			inlineValidation : true
+		});
+
+		var f = new Y.Form({
+			boundingBox : '#login_form',
+			method : 'post',
+			action : '{{settings.SITE_PATH}}Users/login.html',
+			children : [EMailField, {
+				name : 'password',
+				type : 'PasswordField',
+				required : true,
+				label : 'Password:',
+				validator : function(val, field) {
+					if(val.length <= 15 && val.length >= 4) {
+						return true;
+					} else {
+						field.set('error', 'Password length must between 4-15.');
+						return false;
+					}
+				}
+			}, {
+				name : 'submitBtn',
+				type : 'SubmitButton',
+				value : 'Submit'
+			}, {
+				name : 'resetBtn',
+				type : 'ResetButton',
+				value : 'Reset'
+			}]
+		});
+		f.subscribe('success', function(args) {
+			console.log(args)
+		});
+		f.subscribe('failure', function(args) {
+			console.log(args)
+		});
+		f.render();
+	})
+</script>
+{% end %}
+{% block moreHeader %} <script type="text/javascript" src="{{settings.SITE_PATH}}static/scripts/gallery-form-min.js"></script>
 {% end %}

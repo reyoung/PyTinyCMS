@@ -16,6 +16,7 @@ define("port",default=1234,help="Run on given port")
 import controllers.Login
 import controllers.HelloWorld
 import controllers.Users
+import controllers.File
 #END_IMPORT_CONTROLLER
 
 
@@ -25,6 +26,7 @@ UrlMap=[]\
 +[(B+r'',controllers.HelloWorld.IndexHandler)]\
 +[(B+r'Users/',controllers.Users.IndexHandler),(B+r'Users/([0-9]+)/',controllers.Users.IdHandler)]\
 +[(B+r'Users/login.html',controllers.Login.IndexHandler)]\
++[(B+r'File/',controllers.File.IndexHandler),(B+r'File/([0-9]+)',controllers.File.IdHandler)]\
 #END_TORNADO_URLMAP_GEN
 
 def main():

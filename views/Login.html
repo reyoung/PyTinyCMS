@@ -1,5 +1,6 @@
 {% extends "Base.html" %}
-{% block main %} 
+{% block main %}
+<body>
 <div id="login_form"></div>
 <script type="text/javascript">
 	YUI({
@@ -50,6 +51,7 @@
 		f.render();
 	})
 </script>
+</body>
 {% end %}
 {% block moreHeader %} <script type="text/javascript" src="{{settings.SITE_PATH}}static/scripts/gallery-form-min.js"></script>
 {% end %}
